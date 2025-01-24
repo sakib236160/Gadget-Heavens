@@ -1,0 +1,36 @@
+import {createBrowserRouter} from "react-router-dom";
+import Mainlayouts from "../layouts/Mainlayouts";
+import Home from "../pages/Home";
+import Statistics from "../pages/Statistics";
+import Dashboard from "../pages/Dashboard";
+import Support from "../pages/Support";
+
+const routes = createBrowserRouter([
+    {
+      path: "/",
+      element: <Mainlayouts></Mainlayouts>,
+      children:[
+        {
+          path:"/",
+          element:<Home></Home>,
+          loader: () => fetch("../data/categories.json"),
+          children:[],
+        },
+        {
+          path:"/statistics",
+          loader: () => fetch("../data/products.json"),
+          element: <Statistics></Statistics>,
+        },
+        {
+          path:"/dashboard",
+          element: <Dashboard></Dashboard>
+        },
+        {
+          path:"/support",
+          element: <Support></Support>
+        }
+      ]
+    },
+  ]);
+
+export default routes;
