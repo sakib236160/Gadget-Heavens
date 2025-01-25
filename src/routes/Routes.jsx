@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Statistics from "../pages/Statistics";
 import Dashboard from "../pages/Dashboard";
 import Support from "../pages/Support";
+import ProductCards from "../components/ProductCards";
 
 const routes = createBrowserRouter([
     {
@@ -14,7 +15,18 @@ const routes = createBrowserRouter([
           path:"/",
           element:<Home></Home>,
           loader: () => fetch("../data/categories.json"),
-          children:[],
+          children: [
+            {
+              path: "/",
+              element: <ProductCards />,
+              loader: () => fetch("../data/products.json"),
+            },
+            {
+              path: "/category/:category",
+              element: <ProductCards />,
+              loader: () => fetch("../data/products.json"),
+            },
+          ],
         },
         {
           path:"/statistics",

@@ -22,12 +22,12 @@ const Home = () => {
             </div>
 
             <div className="flex-1">
+                {/* Dynamic Nexted Component */}
               <Outlet></Outlet>
             </div>
           </div>
         </div>
       </section>
-            {/* Dynamic Nexted Component */}
         </div>
     );
 };

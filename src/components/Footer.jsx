@@ -4,9 +4,9 @@ const Footer = () => {
     return (
         <footer className="bg-white">
       <div className="mx-auto w-11/12 max-w-screen-xl py-12 sm:py-16 md:py-20 lg:py-24">
-        <h2 className="mb-3 text-center text-2xl font-bold">Gadget Heaven</h2>
+        <h2 className="mb-3 text-center text-2xl font-bold">SKB Cloth Store</h2>
         <p className="mb-6 text-center text-sm sm:text-base">
-          Leading the way in cutting-edge technology and innovation.
+        Redefining fashion with quality craftsmanship and timeless style.
         </p>
         <hr />
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

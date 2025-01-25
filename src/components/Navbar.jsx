@@ -35,7 +35,7 @@ const Navbar = () => {
               <li><Link to="/support">Support</Link></li>
             </ul>
           </div>
-          <a className="text-lg font-bold sm:text-xl">Gadget Heaven</a>
+          <a className="text-lg font-bold sm:text-xl">SKB-Cloth-Store</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-4 px-1">
