@@ -5,6 +5,7 @@ import Statistics from "../pages/Statistics";
 import Dashboard from "../pages/Dashboard";
 import Support from "../pages/Support";
 import ProductCards from "../components/ProductCards";
+import ProductDetails from "../pages/ProductDetails";
 
 const routes = createBrowserRouter([
     {
@@ -40,7 +41,12 @@ const routes = createBrowserRouter([
         {
           path:"/support",
           element: <Support></Support>
-        }
+        },
+        {
+          path: "/product/:id",
+          element: <ProductDetails />,
+          loader: () => fetch("../data/products.json"),
+        },
       ]
     },
   ]);

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -26,35 +26,119 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-            <ul
-              className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
-            >
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/statistics">Statistics</Link></li>
-              <li><Link to="/dashboard">Dashboard</Link></li>
-              <li><Link to="/support">Support</Link></li>
+            <ul className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
+              <NavLink
+                className={({ isActive }) =>
+                  `block rounded-full border px-6 py-3 ${
+                    isActive
+                      ? "bg-[#9538E2] font-bold text-white"
+                      : "bg-gray-100"
+                  }`
+                }
+                to="/"
+              >
+                Home
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `block  rounded-full border px-6 py-3 ${
+                    isActive
+                      ? "bg-[#9538E2] font-bold text-white"
+                      : "bg-gray-100"
+                  }`
+                }
+                to="/statistics"
+              >
+                Statistics
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `block  rounded-full border px-6 py-3 ${
+                    isActive
+                      ? "bg-[#9538E2] font-bold text-white"
+                      : "bg-gray-100"
+                  }`
+                }
+                to="/dashboard"
+              >
+                Dashboard
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `block rounded-full border px-6 py-3 ${
+                    isActive
+                      ? "bg-[#9538E2] font-bold text-white"
+                      : "bg-gray-100"
+                  }`
+                }
+                to="/support"
+              >
+                Support
+              </NavLink>
             </ul>
           </div>
           <a className="text-lg font-bold sm:text-xl">SKB-Cloth-Store</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-4 px-1">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/statistics">Statistics</Link></li>
-            <li><Link to="/dashboard">Dashboard</Link></li>
-            <li><Link to="/support">Support</Link></li>
+            <NavLink
+              className={({ isActive }) =>
+                `block rounded-full border px-6 py-3 ${
+                  isActive ? "bg-[#9538E2] font-bold text-white" : "bg-gray-100"
+                }`
+              }
+              to="/"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `block  rounded-full border px-6 py-3 ${
+                  isActive ? "bg-[#9538E2] font-bold text-white" : "bg-gray-100"
+                }`
+              }
+              to="/statistics"
+            >
+              Statistics
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `block  rounded-full border px-6 py-3 ${
+                  isActive ? "bg-[#9538E2] font-bold text-white" : "bg-gray-100"
+                }`
+              }
+              to="/dashboard"
+            >
+              Dashboard
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `block rounded-full border px-6 py-3 ${
+                  isActive ? "bg-[#9538E2] font-bold text-white" : "bg-gray-100"
+                }`
+              }
+              to="/support"
+            >
+              Support
+            </NavLink>
           </ul>
         </div>
         <div className="navbar-end gap-4">
           {/* Cart Icon */}
-          <button className="btn btn-circle bg-white shadow-none" aria-label="View cart">
+          <button
+            className="btn btn-circle bg-white shadow-none"
+            aria-label="View cart"
+          >
             <div className="indicator">
               <img src="/assets/cart.svg" alt="Cart" className="h-5 w-5" />
               <span className="badge indicator-item badge-sm">0</span>
             </div>
           </button>
           {/* Wishlist Icon */}
-          <button className="btn btn-circle bg-white shadow-none" aria-label="View wishlist">
+          <button
+            className="btn btn-circle bg-white shadow-none"
+            aria-label="View wishlist"
+          >
             <div className="indicator">
               <img src="/assets/heart.svg" alt="Wishlist" className="h-5 w-5" />
               <span className="badge indicator-item badge-sm">0</span>
