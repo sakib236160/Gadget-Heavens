@@ -1,35 +1,3 @@
-// // get all product from local storage
-
-// import toast from "react-hot-toast";
-
-// const getAllProductsFromCart = () => {
-//     const carts = localStorage.getItem("cart");
-//     if(carts){
-//         const cart = JSON.parse(carts)
-//         console.log(cart)
-//         return cart;
-//     }else{
-//         console.log([])
-//         return [];
-//     }
-//   };
-// // add  a product to local storage
-// const addToCart = (product) => {
-//     const cart = getAllProductsFromCart();
-//     const existingProduct = cart.find((item) => item.id === product.id);
-//     if(existingProduct) return toast.error('Product already exists!');
-//     cart.push(product);
-//     localStorage.setItem("cart", JSON.stringify(cart));
-//     toast.success('Successfully Added!');
-//   };
-
-//  // remove a product from local storage
-
-
-// export {addToCart,getAllProductsFromCart}
-
-
-
 import toast from "react-hot-toast";
 
 const getAllProductsFromCart = () => {
