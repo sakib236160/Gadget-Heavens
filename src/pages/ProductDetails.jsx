@@ -4,7 +4,6 @@ import Heading from "../components/Heading";
 import ReactStars from "react-rating-stars-component";
 import { addToCart, addToWishlist, getAllProductsFromWishlist } from "../utils";
 import { Context } from "../layouts/Mainlayouts";
-// import { addToCart} from "../utils";
 
 const ProductDetails = () => {
   const data = useLoaderData();

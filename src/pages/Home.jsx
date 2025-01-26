@@ -1,5 +1,5 @@
 import { Outlet, useLoaderData } from "react-router-dom";
-import Banner from "../components/Banner";
+// import Banner from "../components/Banner";
 import Categories from "../components/Categories";
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div>
             {/* Banner */}
-            <Banner></Banner>
+            {/* <Banner></Banner> */}
             {/* Categories Tab Section */}
             <section>
         <div className="mx-auto mb-24 w-11/12 max-w-screen-xl">

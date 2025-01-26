@@ -7,11 +7,10 @@ const Banner = () => {
         <div className="mx-auto w-11/12 max-w-screen-xl">
           <div className="mx-auto max-w-screen-lg text-center">
             <h1 className="py-6 text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
-            Upgrade Your Style
-            Accessorize with SKB Cloth Store’s Premium Collection
+            Upgrade Your Style Accessorize with SKB Gadgets Premium Collection
             </h1>
             <p className="mx-auto max-w-prose text-sm sm:text-base">
-            Explore the latest styles that will elevate your wardrobe to the next level. From trendy outfits to the finest accessories, we have it all at SKB Cloth Store!
+            Take your tech game to the next level with our premium range of gadgets and accessories. SKB Gadgets is your ultimate destination for style, innovation, and functionality!
             </p>
             <button className="my-8 rounded-full bg-white px-6 py-3 font-bold text-[#9538E2]">
               Shop Now

@@ -48,7 +48,7 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-          <a className="text-lg font-bold sm:text-xl">SKB-Cloth-Store</a>
+          <a className="text-lg font-bold sm:text-xl">SKB Gadgets</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-4 px-1">

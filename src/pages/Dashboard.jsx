@@ -1,11 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Heading from "../components/Heading";
-// import Heading from "./Heading";
 
 const Dashboard = () => {
-    return (
-        <>
-           <div>
+  return (
+    <>
+      <div>
         <Heading
           title="Dashboard"
           description="Manage your product cart and wishlist here. Add, edit, and delete products from your cart and wishlist. Keep track of your total cost and payment status."
@@ -14,7 +13,9 @@ const Dashboard = () => {
           <NavLink
             to="/dashboard/cart"
             className={({ isActive }) =>
-              `inline-block min-w-32 rounded-full border px-6 py-3 text-center ${isActive ? "bg-white font-bold text-[#9538E2]" : "text-white"}`
+              `inline-block min-w-32 rounded-full border px-6 py-3 text-center ${
+                isActive ? "bg-white font-bold text-[#9538E2]" : "text-white"
+              }`
             }
           >
             Cart
@@ -22,7 +23,9 @@ const Dashboard = () => {
           <NavLink
             to="/dashboard/wishlist"
             className={({ isActive }) =>
-              `inline-block min-w-32 rounded-full border px-6 py-3 text-center ${isActive ? "bg-white font-bold text-[#9538E2]" : "text-white"}`
+              `inline-block min-w-32 rounded-full border px-6 py-3 text-center ${
+                isActive ? "bg-white font-bold text-[#9538E2]" : "text-white"
+              }`
             }
           >
             Wishlist
@@ -30,8 +33,8 @@ const Dashboard = () => {
         </div>
         <Outlet />
       </div>
-        </>
-    );
+    </>
+  );
 };
 
 export default Dashboard;

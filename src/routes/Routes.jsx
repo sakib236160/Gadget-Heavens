@@ -8,11 +8,13 @@ import ProductCards from "../components/ProductCards";
 import ProductDetails from "../pages/ProductDetails";
 import Cart from "../components/Cart";
 import Wishlist from "../components/Wishlist";
+import ErrorPage from "../components/ErrorPage";
 
 const routes = createBrowserRouter([
     {
       path: "/",
       element: <Mainlayouts></Mainlayouts>,
+      errorElement: <ErrorPage></ErrorPage>,
       children:[
         {
           path:"/",
