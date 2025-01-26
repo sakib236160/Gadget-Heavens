@@ -13,7 +13,7 @@ const Banner = () => {
             Take your tech game to the next level with our premium range of gadgets and accessories. SKB Gadgets is your ultimate destination for style, innovation, and functionality!
             </p>
             <button className="my-8 rounded-full bg-white px-6 py-3 font-bold text-[#9538E2]">
-              Shop Now
+            Upgrade Today
             </button>
           </div>
         </div>

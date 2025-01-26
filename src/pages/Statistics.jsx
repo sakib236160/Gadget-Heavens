@@ -19,8 +19,8 @@ const Statistics = () => {
         <>
         {/* Headding */}
         <Heading
-        title="Statistics"
-        description="Check out the statistics of our products to get a deeper understanding of our offerings. Our team of experts is always on the lookout for new and exciting trends."
+        title="Performance"
+        description="This version emphasizes both the detailed insights you provide and your team's dedication to staying ahead in the market. Let me know if you'd like any further tweaks!"
       />
         <div className="mx-auto mb-20 mt-10 w-11/12 max-w-screen-xl">
         <h2 className="mb-4 text-xl font-bold">Statistics</h2>

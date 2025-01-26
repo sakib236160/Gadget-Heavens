@@ -12,7 +12,7 @@ const Home = () => {
             <section>
         <div className="mx-auto mb-24 w-11/12 max-w-screen-xl">
           <h2 className="mb-8 text-center text-2xl font-bold sm:text-3xl">
-            Explore Cutting-Edge Gadgets
+            SKB Cutting-Edge Gadgets
           </h2>
           <div className="flex flex-col gap-6 sm:flex-row">
             <div>

@@ -6,8 +6,8 @@ const Dashboard = () => {
     <>
       <div>
         <Heading
-          title="Dashboard"
-          description="Manage your product cart and wishlist here. Add, edit, and delete products from your cart and wishlist. Keep track of your total cost and payment status."
+          title="Control Panel "
+          description="Manage your cart and wishlist effortlessly. Add, edit, or remove products from both. Track your total cost and payment status. Click the 'Cart' or 'Wishlist' button to view and update your items instantly."
         />
         <div className="flex items-center justify-center gap-6 bg-[#9538E2] pb-8">
           <NavLink
