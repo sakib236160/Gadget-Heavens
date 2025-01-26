@@ -1,9 +1,13 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Heading from "../components/Heading";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
   return (
     <>
+     <Helmet>
+        <title>Dashboard | Gadget Heaven</title>
+      </Helmet> 
       <div>
         <Heading
           title="Control Panel "

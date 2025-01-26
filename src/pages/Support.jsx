@@ -1,7 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import Heading from "../components/Heading";
 
 const Support = () => {
   return (
+     <>
+      <Helmet>
+        <title>Support | SKB Gadget </title>
+      </Helmet> 
     <div className="">
       <Heading
         title="Help Center"
@@ -136,6 +141,7 @@ const Support = () => {
         </div>
       </div>
     </div>
+     </>
   );
 };
 

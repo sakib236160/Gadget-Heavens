@@ -4,6 +4,7 @@ import Heading from "../components/Heading";
 import ReactStars from "react-rating-stars-component";
 import { addToCart, addToWishlist, getAllProductsFromWishlist } from "../utils";
 import { Context } from "../layouts/Mainlayouts";
+import { Helmet } from "react-helmet-async";
 
 const ProductDetails = () => {
   const data = useLoaderData();
@@ -38,6 +39,9 @@ const handleAddToCart = (product) => {
 
   return (
     <>
+    <Helmet>
+        <title>Product Details | SKB Gadget</title>
+      </Helmet> 
       <div>
         <Heading
           title="Product Details"

@@ -11,12 +11,16 @@ import {
     ResponsiveContainer,
   } from "recharts";
     import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Statistics = () => {
     const data = useLoaderData();
 
     return (
         <>
+        <Helmet>
+        <title>Statistics | SKB Gadget</title>
+      </Helmet> 
         {/* Headding */}
         <Heading
         title="Performance"

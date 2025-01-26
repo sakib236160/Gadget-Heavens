@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Context } from "../layouts/Mainlayouts";
 import { addToCart, getAllProductsFromWishlist, removeFromWishlist } from "../utils";
 import WishlistItem from "./WishlistItem";
+import { Helmet } from "react-helmet-async";
 
 const Wishlist = () => {
     const [wishlistItems, setWishlistItems] = useState(
@@ -22,6 +23,10 @@ const Wishlist = () => {
         updateState();
       };
     return (
+        <>
+          <Helmet>
+        <title>Wishlist | SKB Gadget</title>
+      </Helmet> 
         <div>
             <div className="mx-auto w-11/12 max-w-screen-xl">
         <h2 className="my-8 text-xl font-bold">Wishlist</h2>
@@ -39,6 +44,7 @@ const Wishlist = () => {
         <div className="h-24"></div>
       </div>
         </div>
+        </>
     );
 };
 

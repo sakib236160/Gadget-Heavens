@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getAllProductsFromCart,removeFromCart } from "../utils";
 import { Context } from "../layouts/Mainlayouts";
 import CartItem from "./CartItem";
+import { Helmet } from "react-helmet-async";
 
 export default function Cart() {
   const [cartItems, setCartItems] = useState(getAllProductsFromCart());
@@ -37,6 +38,9 @@ export default function Cart() {
 
   return (
     <>
+       <Helmet>
+        <title>Cart | SKB Gadget</title>
+      </Helmet> 
       <div className="mx-auto w-11/12 max-w-screen-xl">
         <div className="my-8 flex flex-col items-center justify-between sm:flex-row">
           <h2 className="text-xl font-bold">Cart</h2>
