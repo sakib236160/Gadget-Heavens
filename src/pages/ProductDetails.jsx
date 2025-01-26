@@ -2,15 +2,40 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Heading from "../components/Heading";
 import ReactStars from "react-rating-stars-component";
+import { addToCart, addToWishlist, getAllProductsFromWishlist } from "../utils";
+// import { addToCart} from "../utils";
 
 const ProductDetails = () => {
   const data = useLoaderData();
   const { id } = useParams();
   const [product, setProduct] = useState({});
+  const [inWishlist, setInWishlist] = useState(false);
   useEffect(() => {
     const singleProduct = data.find((product) => product.id === parseInt(id));
     setProduct(singleProduct);
+    const wishlist = getAllProductsFromWishlist();
+    if (wishlist.find((item) => item.id == singleProduct.id)) {
+      setInWishlist(true);
+    }
   }, [data, id]);
+//   const {updateState} = useContext(Context);
+
+
+// handleAddToCart  
+const handleAddToCart = (product) => {
+    addToCart(product)
+    // updateState();
+  };
+
+  const handleAddToWishlist = (product) => {
+    addToWishlist(product);
+    setInWishlist(true);
+    // updateState();
+  };
+
+
+
+
   return (
     <>
       <div>
@@ -63,12 +88,15 @@ const ProductDetails = () => {
                 </div>
                 <div className="flex items-center gap-4">
                   <button
+                   onClick={()=>handleAddToCart(product)}
                     className="flex gap-2 rounded-full bg-[#9538E2] px-6 py-3 font-bold text-white"
                   >
                     Add to Cart{" "}
                     <img src="../src/assets/cart-white.svg" alt="" />
                   </button>
                   <button
+                  disabled={inWishlist}
+                  onClick={() => handleAddToWishlist(product)}
                     className="aspect-square rounded-full border bg-white p-3 font-bold disabled:bg-gray-100"
                   >
                     <img src="/assets/heart.svg" alt="" />
