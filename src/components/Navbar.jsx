@@ -1,15 +1,19 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../layouts/Mainlayouts";
 
-const Navbar = () => {
+export default function Navbar() {
+  const { productsInCart, productsInWishlist } = useContext(Context);
+
   return (
     <nav className="py-2">
       <div className="navbar mx-auto w-11/12 max-w-screen-xl">
         <div className="navbar-start">
           <div className="dropdown">
-            <button
+            <div
               tabIndex={0}
+              role="button"
               className="btn btn-ghost pl-0 lg:hidden"
-              aria-label="Open menu"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -25,129 +29,117 @@ const Navbar = () => {
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
               </svg>
-            </button>
-            <ul className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
-              <NavLink
-                className={({ isActive }) =>
-                  `block rounded-full border px-6 py-3 ${
-                    isActive
-                      ? "bg-[#9538E2] font-bold text-white"
-                      : "bg-gray-100"
-                  }`
-                }
-                to="/"
-              >
-                Home
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  `block  rounded-full border px-6 py-3 ${
-                    isActive
-                      ? "bg-[#9538E2] font-bold text-white"
-                      : "bg-gray-100"
-                  }`
-                }
-                to="/statistics"
-              >
-                Statistics
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  `block  rounded-full border px-6 py-3 ${
-                    isActive
-                      ? "bg-[#9538E2] font-bold text-white"
-                      : "bg-gray-100"
-                  }`
-                }
-                to="/dashboard"
-              >
-                Dashboard
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  `block rounded-full border px-6 py-3 ${
-                    isActive
-                      ? "bg-[#9538E2] font-bold text-white"
-                      : "bg-gray-100"
-                  }`
-                }
-                to="/support"
-              >
-                Support
-              </NavLink>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu dropdown-content menu-sm z-[1] mt-3 w-52 gap-2 rounded-box bg-base-100 p-2 text-black shadow"
+            >
+              <li>
+                <NavLink to="/">Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/statistics">Statistics</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard">Dashboard</NavLink>
+              </li>
+              <li>
+                <NavLink to="/support">Support</NavLink>
+              </li>
             </ul>
           </div>
           <a className="text-lg font-bold sm:text-xl">SKB-Cloth-Store</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-4 px-1">
-            <NavLink
-              className={({ isActive }) =>
-                `block rounded-full border px-6 py-3 ${
-                  isActive ? "bg-[#9538E2] font-bold text-white" : "bg-gray-100"
-                }`
-              }
-              to="/"
-            >
-              Home
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `block  rounded-full border px-6 py-3 ${
-                  isActive ? "bg-[#9538E2] font-bold text-white" : "bg-gray-100"
-                }`
-              }
-              to="/statistics"
-            >
-              Statistics
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `block  rounded-full border px-6 py-3 ${
-                  isActive ? "bg-[#9538E2] font-bold text-white" : "bg-gray-100"
-                }`
-              }
-              to="/dashboard"
-            >
-              Dashboard
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `block rounded-full border px-6 py-3 ${
-                  isActive ? "bg-[#9538E2] font-bold text-white" : "bg-gray-100"
-                }`
-              }
-              to="/support"
-            >
-              Support
-            </NavLink>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/statistics">Statistics</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard">Dashboard</NavLink>
+            </li>
+            <li>
+              <NavLink to="/support">Support</NavLink>
+            </li>
           </ul>
         </div>
         <div className="navbar-end gap-4">
-          {/* Cart Icon */}
-          <button
-            className="btn btn-circle bg-white shadow-none"
-            aria-label="View cart"
-          >
-            <div className="indicator">
-              <img src="/assets/cart.svg" alt="Cart" className="h-5 w-5" />
-              <span className="badge indicator-item badge-sm">0</span>
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-circle bg-white shadow-none"
+            >
+              <div className="indicator">
+                <img src="/assets/cart.svg" alt="" className="h-5 w-5" />
+                <span className="badge indicator-item badge-sm">
+                  {productsInCart.length}
+                </span>
+              </div>
             </div>
-          </button>
-          {/* Wishlist Icon */}
-          <button
-            className="btn btn-circle bg-white shadow-none"
-            aria-label="View wishlist"
-          >
-            <div className="indicator">
-              <img src="/assets/heart.svg" alt="Wishlist" className="h-5 w-5" />
-              <span className="badge indicator-item badge-sm">0</span>
+            <div
+              tabIndex={0}
+              className="card dropdown-content card-compact z-[1] mt-3 w-52 bg-base-100 shadow"
+            >
+              <div className="card-body">
+                <span className="text-lg font-bold text-black">
+                  {productsInCart.length} Items
+                </span>
+                <span className="text-info">
+                  Subtotal: ${productsInCart.reduce((a, b) => a + b.price, 0)}
+                </span>
+                <div className="card-actions">
+                  <NavLink
+                    to="/dashboard/cart"
+                    className="btn btn-block bg-[#9538E2] text-white"
+                  >
+                    View cart
+                  </NavLink>
+                </div>
+              </div>
             </div>
-          </button>
+          </div>
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-circle bg-white shadow-none"
+            >
+              <div className="indicator">
+                <img src="/assets/heart.svg" alt="" className="h-5 w-5" />
+                <span className="badge indicator-item badge-sm">
+                  {productsInWishlist.length}
+                </span>
+              </div>
+            </div>
+            <div
+              tabIndex={0}
+              className="card dropdown-content card-compact z-[1] mt-3 w-52 bg-base-100 shadow"
+            >
+              <div className="card-body">
+                <span className="text-lg font-bold text-black">
+                  {productsInWishlist.length} Items
+                </span>
+                <span className="text-info">
+                  Subtotal: $
+                  {productsInWishlist.reduce((a, b) => a + b.price, 0)}
+                </span>
+                <div className="card-actions">
+                  <NavLink
+                    to="/dashboard/wishlist"
+                    className="btn btn-block bg-[#9538E2] text-white"
+                  >
+                    View wishlist
+                  </NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}

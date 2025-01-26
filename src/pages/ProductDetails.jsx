@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Heading from "../components/Heading";
 import ReactStars from "react-rating-stars-component";
 import { addToCart, addToWishlist, getAllProductsFromWishlist } from "../utils";
+import { Context } from "../layouts/Mainlayouts";
 // import { addToCart} from "../utils";
 
 const ProductDetails = () => {
@@ -18,19 +19,19 @@ const ProductDetails = () => {
       setInWishlist(true);
     }
   }, [data, id]);
-//   const {updateState} = useContext(Context);
+  const {updateState} = useContext(Context);
 
 
 // handleAddToCart  
 const handleAddToCart = (product) => {
     addToCart(product)
-    // updateState();
+    updateState();
   };
 
   const handleAddToWishlist = (product) => {
     addToWishlist(product);
     setInWishlist(true);
-    // updateState();
+    updateState();
   };
 
 
