@@ -23,7 +23,7 @@ const Mainlayouts = () => {
   return (
     <>
       <Context.Provider
-        value={{ productsInCart, productsInWishlist, updateState }}
+        value={{productsInCart, productsInWishlist, updateState}}
       >
         <Helmet>
           <title>Skb Gadget</title>
