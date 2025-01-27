@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Categories = ({categories}) => {
     return (
+  
         <div className="space-y-4">
       <NavLink
         className={({ isActive }) =>

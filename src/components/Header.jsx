@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
-import Banner from "./Banner";
+// import Banner from "./Banner";
 
 const Header = () => {
   const location = useLocation();
@@ -15,7 +15,7 @@ const Header = () => {
       } md:mx-5 lg:mx-6`}
     >
       <Navbar />
-      {isHomePage && <Banner />}
+      {/* {isHomePage && <Banner />} */}
     </header>
   );
 };

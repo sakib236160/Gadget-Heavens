@@ -32,7 +32,7 @@ const Mainlayouts = () => {
         {/* Navbar */}
         {/* <Navbar></Navbar> */}
         <Header></Header>
-        <div className="min-h-[calc(100vh-505px)] py-12">
+        <div className="min-h-[calc(100vh-505px)]">
           {/* Dymanik */}
           <Outlet></Outlet>
         </div>

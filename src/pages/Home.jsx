@@ -1,5 +1,5 @@
 import { Outlet, useLoaderData } from "react-router-dom";
-// import Banner from "../components/Banner";
+import Banner from "../components/Banner";
 import Categories from "../components/Categories";
 import { Helmet } from "react-helmet-async";
 
@@ -11,7 +11,7 @@ const Home = () => {
         <title>SKB Gadget</title>
       </Helmet> 
             {/* Banner */}
-            {/* <Banner></Banner> */}
+            <Banner></Banner>
             {/* Categories Tab Section */}
             <section>
         <div className="mx-auto mb-24 w-11/12 max-w-screen-xl">
