@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 
 const Card = ({ product }) => {
   return (
-    <div className="rounded-xl bg-white p-4">
-      <figure className="mb-2">
-        <img src={product.image} className="rounded-lg" />
+    <div className="rounded-xl bg-white p-4 shadow-2xl">
+      <figure className="mb-4">
+        <img src={product.image} className="rounded-lg w-full h-64 " />
       </figure>
       <div className="">
         <h2 className="mb-2 text-xl font-bold">{product.title}</h2>
